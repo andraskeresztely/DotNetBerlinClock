@@ -1,15 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using BerlinClock.Interfaces;
 
-namespace BerlinClock
+namespace BerlinClock.Classes
 {
     public class TimeConverter : ITimeConverter
     {
-        public string convertTime(string aTime)
+        private readonly IBerlinClock berlinClock;
+        private readonly IFormatter<string> stringFormatter;
+
+        public TimeConverter()
         {
-            throw new NotImplementedException();
+            berlinClock = new BerlinClock(new TimeParser());
+            stringFormatter = new StringFormatter();
+        }
+
+        public string ConvertTime(string aTime)
+        {
+            var berlinTime = berlinClock.GetTime(aTime);
+            return stringFormatter.Format(berlinTime);
         }
     }
 }
