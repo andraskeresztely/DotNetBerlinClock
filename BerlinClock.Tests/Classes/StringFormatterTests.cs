@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections;
 using BerlinClock.Classes;
-using BerlinClock.Helpers;
+using BerlinClock.Extensions;
 using BerlinClock.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BerlinClock.Tests
+namespace BerlinClock.Tests.Classes
 {
     [TestClass]
     public class StringFormatterTests
@@ -27,10 +27,10 @@ namespace BerlinClock.Tests
         {
             var timeModel = new BerlinTimeModel(
                 true,
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow),
-                new BitArray(Classes.BerlinClock.MinuteSignalsPerRow),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow));
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow),
+                new BitArray(BerlinClock.Classes.BerlinClock.MinuteSignalsPerRow),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow));
 
             Assert.AreEqual(
                 stringFormatter.Format(timeModel),
@@ -42,10 +42,10 @@ namespace BerlinClock.Tests
         {
             var timeModel = new BerlinTimeModel(
                 true,
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2),
-                new BitArray(Classes.BerlinClock.MinuteSignalsPerRow).SetBits(9),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2));
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2),
+                new BitArray(BerlinClock.Classes.BerlinClock.MinuteSignalsPerRow).SetBits(9),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2));
 
             Assert.AreEqual(
                 stringFormatter.Format(timeModel),
@@ -57,10 +57,10 @@ namespace BerlinClock.Tests
         {
             var timeModel = new BerlinTimeModel(
                 false,
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(1),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2),
-                new BitArray(Classes.BerlinClock.MinuteSignalsPerRow).SetBits(2),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(3));
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(1),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2),
+                new BitArray(BerlinClock.Classes.BerlinClock.MinuteSignalsPerRow).SetBits(2),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(3));
 
             Assert.AreEqual(
                 stringFormatter.Format(timeModel),
@@ -72,10 +72,10 @@ namespace BerlinClock.Tests
         {
             var timeModel = new BerlinTimeModel(
                 true,
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2),
-                new BitArray(Classes.BerlinClock.MinuteSignalsPerRow),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow));
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2),
+                new BitArray(BerlinClock.Classes.BerlinClock.MinuteSignalsPerRow),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow));
 
             Assert.AreEqual(
                 stringFormatter.Format(timeModel),
@@ -87,10 +87,10 @@ namespace BerlinClock.Tests
         {
             var timeModel = new BerlinTimeModel(
                 false,
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(3),
-                new BitArray(Classes.BerlinClock.MinuteSignalsPerRow).SetBits(3),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2));
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(3),
+                new BitArray(BerlinClock.Classes.BerlinClock.MinuteSignalsPerRow).SetBits(3),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2));
 
             Assert.AreEqual(
                 stringFormatter.Format(timeModel),
@@ -102,10 +102,10 @@ namespace BerlinClock.Tests
         {
             var timeModel = new BerlinTimeModel(
                 false,
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(3),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(3),
-                new BitArray(Classes.BerlinClock.MinuteSignalsPerRow).SetBits(6),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2));
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(3),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(3),
+                new BitArray(BerlinClock.Classes.BerlinClock.MinuteSignalsPerRow).SetBits(6),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(2));
 
             Assert.AreEqual(
                 stringFormatter.Format(timeModel),
@@ -117,10 +117,10 @@ namespace BerlinClock.Tests
         {
             var timeModel = new BerlinTimeModel(
                 false,
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(1),
-                new BitArray(Classes.BerlinClock.MinuteSignalsPerRow).SetBits(5),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4));
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(1),
+                new BitArray(BerlinClock.Classes.BerlinClock.MinuteSignalsPerRow).SetBits(5),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4));
 
             Assert.AreEqual(
                 stringFormatter.Format(timeModel),
@@ -132,10 +132,10 @@ namespace BerlinClock.Tests
         {
             var timeModel = new BerlinTimeModel(
                 false,
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(3),
-                new BitArray(Classes.BerlinClock.MinuteSignalsPerRow).SetBits(11),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4));
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(3),
+                new BitArray(BerlinClock.Classes.BerlinClock.MinuteSignalsPerRow).SetBits(11),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4));
 
             Assert.AreEqual(
                 stringFormatter.Format(timeModel),
@@ -147,10 +147,10 @@ namespace BerlinClock.Tests
         {
             var timeModel = new BerlinTimeModel(
                 true,
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4),
-                new BitArray(Classes.BerlinClock.MinuteSignalsPerRow),
-                new BitArray(Classes.BerlinClock.DefaultSignalsPerRow));
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow).SetBits(4),
+                new BitArray(BerlinClock.Classes.BerlinClock.MinuteSignalsPerRow),
+                new BitArray(BerlinClock.Classes.BerlinClock.DefaultSignalsPerRow));
 
             Assert.AreEqual(
                 stringFormatter.Format(timeModel),

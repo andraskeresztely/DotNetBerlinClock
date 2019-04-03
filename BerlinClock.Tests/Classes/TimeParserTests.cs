@@ -2,7 +2,7 @@
 using BerlinClock.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BerlinClock.Tests
+namespace BerlinClock.Tests.Classes
 {
     [TestClass]
     public class TimeParserTests

@@ -7,3 +7,6 @@
 /obj/Debug
 /packages/SpecFlow.1.9.0
 /BerlinClock.sln.DotSettings.user
+/BerlinClock.Tests/bin/Debug
+/BerlinClock.Tests/obj/Debug
+/packages

@@ -3,17 +3,17 @@ using System.Linq;
 using BerlinClock.Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BerlinClock.Tests
+namespace BerlinClock.Tests.Classes
 {
     [TestClass]
     public class BerlinClockTests
     {
-        private Classes.BerlinClock berlinClock;
+        private BerlinClock.Classes.BerlinClock berlinClock;
 
         [TestInitialize]
         public void Initialise()
         {
-            berlinClock = new Classes.BerlinClock(new TimeParser());
+            berlinClock = new BerlinClock.Classes.BerlinClock(new TimeParser());
         }
         
         [TestMethod]

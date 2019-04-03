@@ -2,7 +2,7 @@
 using BerlinClock.Interfaces;
 using BerlinClock.Models;
 using System.Collections;
-using BerlinClock.Helpers;
+using BerlinClock.Extensions;
 using BerlinClock.Resources;
 
 namespace BerlinClock.Classes

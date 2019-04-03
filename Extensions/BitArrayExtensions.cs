@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 
-namespace BerlinClock.Helpers
+namespace BerlinClock.Extensions
 {
-    public static class BitArrayHelpers
+    public static class BitArrayExtensions
     {
         public static BitArray SetBits(this BitArray bitArray, int value)
         {

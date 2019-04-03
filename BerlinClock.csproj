@@ -54,7 +54,7 @@
     <Compile Include="Classes\BerlinClock.cs" />
     <Compile Include="Classes\StringFormatter.cs" />
     <Compile Include="Classes\TimeParser.cs" />
-    <Compile Include="Helpers\BitArrayHelpers.cs" />
+    <Compile Include="Extensions\BitArrayExtensions.cs" />
     <Compile Include="Interfaces\IBerlinClock.cs" />
     <Compile Include="Interfaces\IFormatter.cs" />
     <Compile Include="Interfaces\ITimeParser.cs" />
@@ -73,9 +73,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BerlinClockResource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Tests\BerlinClockTests.cs" />
-    <Compile Include="Tests\StringFormatterTests.cs" />
-    <Compile Include="Tests\TimeParserTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
