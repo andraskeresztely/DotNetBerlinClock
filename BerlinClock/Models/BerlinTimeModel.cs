@@ -2,7 +2,7 @@
 
 namespace BerlinClock.Models
 {
-    public struct BerlinTimeModel
+    internal struct BerlinTimeModel
     {
         public BerlinTimeModel(
             bool secondSet, 

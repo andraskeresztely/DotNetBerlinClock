@@ -61,7 +61,7 @@ namespace BerlinClock.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The input string contains an invalid value. Required format: hh:mm:ss.
+        ///   Looks up a localized string similar to The input string contains an invalid time value. Required format: hh:mm:ss.
         /// </summary>
         internal static string InvalidArgumentError {
             get {

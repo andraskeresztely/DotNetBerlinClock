@@ -17,41 +17,43 @@ namespace BerlinClock.Classes
             var builder = new StringBuilder();
 
             builder.Append(timeModel.SecondSet ? YellowSignal : NoSignal).AppendLine();
-            builder.Append(GetSignals(timeModel.FiveHours, RedSignal)).AppendLine();
-            builder.Append(GetSignals(timeModel.Hours, RedSignal)).AppendLine();
-            builder.Append(GetSignals(timeModel.FiveMinutes, YellowSignal,
+            builder.Append(GetRowOfSignals(timeModel.FiveHours, RedSignal)).AppendLine();
+            builder.Append(GetRowOfSignals(timeModel.Hours, RedSignal)).AppendLine();
+            builder.Append(GetRowOfSignals(timeModel.FiveMinutes, YellowSignal,
                 BerlinTimeModel.MinuteSignalsAlternateCount, RedSignal)).AppendLine();
-            builder.Append(GetSignals(timeModel.Minutes, YellowSignal));
+            builder.Append(GetRowOfSignals(timeModel.Minutes, YellowSignal));
 
             return builder.ToString();
         }
 
-        private static char[] GetSignals(BitArray signalBits, char signal)
-        {
-            return GetSignals(signalBits, signal, 1, signal);
-        }
-
-        private static char[] GetSignals(
+        private static char[] GetRowOfSignals(
             BitArray signalBits, 
             char signal, 
-            int alternateCount, 
-            char alternateSignal)
+            int? alternateCount = null, 
+            char? alternateSignal = null)
         {
-            var signals = new List<char>();
+            var rowOfSignals = new List<char>();
 
             for (var i = 0; i < signalBits.Count; i++)
             {
-                if (signalBits.Get(i))
-                {
-                    signals.Add((i + 1) % alternateCount == 0 ? alternateSignal : signal);
-                }
-                else
-                {
-                    signals.Add(NoSignal);
-                }
+                var oneSignal = signalBits.Get(i)
+                    ? GetOneSignal(i, signal, alternateCount, alternateSignal)
+                    : NoSignal;
+
+                rowOfSignals.Add(oneSignal);
             }
 
-            return signals.ToArray();
+            return rowOfSignals.ToArray();
+        }
+
+        private static char GetOneSignal(int index, char signal, int? alternateCount, char? alternateSignal)
+        {
+            if (alternateCount.HasValue && alternateSignal.HasValue && (index + 1) % alternateCount == 0)
+            {
+                return alternateSignal.Value;
+            }
+
+            return signal;
         }
     }
 }

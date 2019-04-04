@@ -2,7 +2,7 @@
 
 namespace BerlinClock.Extensions
 {
-    public static class BitArrayExtensions
+    internal static class BitArrayExtensions
     {
         public static BitArray SetBits(this BitArray bitArray, int value)
         {

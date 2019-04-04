@@ -1,6 +1,6 @@
 ﻿namespace BerlinClock.Models
 {
-    public struct TimeModel
+    internal struct TimeModel
     {
         public TimeModel(int hours, int minutes, int seconds)
         {
