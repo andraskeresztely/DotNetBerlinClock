@@ -7,7 +7,7 @@ using BerlinClock.Resources;
 
 namespace BerlinClock.Classes
 {
-    internal class BerlinClock : IBerlinClock
+    internal class BerlinClock : IClock<BerlinTimeModel>
     {
         private readonly ITimeParser timeParser;
         public const int DefaultSignalsPerRow = 4;

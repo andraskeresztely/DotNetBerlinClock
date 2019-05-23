@@ -55,7 +55,7 @@
     <Compile Include="Classes\StringFormatter.cs" />
     <Compile Include="Classes\TimeParser.cs" />
     <Compile Include="Extensions\BitArrayExtensions.cs" />
-    <Compile Include="Interfaces\IBerlinClock.cs" />
+    <Compile Include="Interfaces\IClock.cs" />
     <Compile Include="Interfaces\IFormatter.cs" />
     <Compile Include="Interfaces\ITimeParser.cs" />
     <Compile Include="Models\BerlinTimeModel.cs" />

@@ -1,10 +1,11 @@
 ﻿using BerlinClock.Interfaces;
+using BerlinClock.Models;
 
 namespace BerlinClock.Classes
 {
     public class TimeConverter : ITimeConverter
     {
-        private readonly IBerlinClock berlinClock;
+        private readonly IClock<BerlinTimeModel> berlinClock;
         private readonly IFormatter<string> stringFormatter;
 
         public TimeConverter()
